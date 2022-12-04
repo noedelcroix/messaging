@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="be.g55990.messaging.LoginFragment"
+        android:name="be.g55990.messaging.view.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/AboutFragment"
-        android:name="be.g55990.messaging.AboutFragment"
+        android:name="be.g55990.messaging.view.AboutFragment"
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about" />
 </navigation>

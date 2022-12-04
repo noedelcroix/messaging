@@ -1,24 +1,21 @@
-package be.g55990.messaging
+package be.g55990.messaging.view
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import be.g55990.messaging.R.layout
+import be.g55990.messaging.R
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
+ * Use the [AboutFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoginFragment : Fragment() {
+class AboutFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
@@ -33,25 +30,8 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-
-        val rootView : View = inflater.inflate(layout.fragment_login, container, false)
-        val input : EditText = rootView.findViewById(R.id.input)
-        val button : Button = rootView.findViewById(R.id.button)
-
-        button.setOnClickListener {
-
-            if("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}\$".toRegex().containsMatchIn(input.text.toString())){
-                Toast.makeText(rootView.context, "Valid email address.", Toast.LENGTH_SHORT).show()
-                //it.findNavController().navigate(R.id.AboutFragment);
-            }else{
-                Toast.makeText(rootView.context, "Invalid email address.", Toast.LENGTH_SHORT).show()
-            }
-
-            input.setText("")
-        }
-
-        return rootView
+    ): View? {
+        return inflater.inflate(R.layout.fragment_about, container, false)
     }
 
     companion object {
@@ -61,12 +41,12 @@ class LoginFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
+         * @return A new instance of fragment AboutFragment.
          */
 
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
+            AboutFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

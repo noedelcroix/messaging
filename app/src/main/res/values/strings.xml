@@ -5,4 +5,20 @@
     <string name="labelInput">Email…</string>
     <string name="about_title">About</string>
     <string name="login_title">Login</string>
+    <string name="inscription">Inscription</string>
+    <string name="password">Password...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="messages">Messages</string>
+    <string name="name">Name</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="add_peer">Add Peer</string>
+    <string name="pairText">My UID : </string>
+    <string name="textview">TextView</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="enter_text">Enter text...</string>
+    <string name="readable_name">Readable name</string>
+    <string name="user_id">User ID</string>
+    <string name="send_my_uid">Send My UID</string>
+    <string name="add_pair">Add Pair</string>
 </resources>

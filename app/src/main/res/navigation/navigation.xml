@@ -3,16 +3,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/LoginFragment">
+    app:startDestination="@id/fragment_login">
 
     <fragment
-        android:id="@+id/LoginFragment"
+        android:id="@+id/fragment_login"
         android:name="be.g55990.messaging.view.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login"/>
     <fragment
-        android:id="@+id/AboutFragment"
+        android:id="@+id/fragment_about"
         android:name="be.g55990.messaging.view.AboutFragment"
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about" />
+    <navigation
+        android:id="@+id/navigation_message"
+        app:startDestination="@id/fragment_message_list">
+        <fragment
+            android:id="@+id/fragment_message_list"
+            android:name="be.g55990.messaging.view.MessageListFragment"
+            android:label="MessageListFragment"
+            tools:layout="@layout/fragment_message_list">
+            <action
+                android:id="@+id/action_fragment_message_list_to_fragment_add_peer"
+                app:destination="@id/fragment_add_peer"
+                app:enterAnim="@anim/nav_default_pop_enter_anim" />
+            <action
+                android:id="@+id/action_fragment_message_list_to_fragment_message"
+                app:destination="@id/fragment_message" />
+        </fragment>
+        <fragment
+            android:id="@+id/fragment_add_peer"
+            android:name="be.g55990.messaging.view.AddPeerFragment"
+            android:label="fragment_add_peer"
+            tools:layout="@layout/fragment_add_peer" />
+        <fragment
+            android:id="@+id/fragment_message"
+            android:name="be.g55990.messaging.view.MessageFragment"
+            android:label="MessageFragment"
+            tools:layout="@layout/fragment_message" >
+            <argument
+                android:name="userid"
+                app:argType="string" />
+        </fragment>
+    </navigation>
+    <action
+        android:id="@+id/action_global_navigation_message"
+        app:destination="@id/navigation_message"
+        app:popUpTo="@id/fragment_login"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/action_global_fragment_login"
+        app:destination="@id/fragment_login"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="true" />
 </navigation>

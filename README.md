@@ -1,6 +1,6 @@
 # Projet MOBG5
 
-Ce dépôt contient les sources du projet Messaging.
+Short android project built with Kotlin. It is a message app working on Firebase and allowing to exchange user id (to pair) with nearby messages. It was my mobile course project. It is a completely experimental project.
 
 ## Description
 
